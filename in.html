@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KETINENI AKHIL - Personal Portfolio</title>
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --secondary: #4f46e5;
+      --dark: #1e293b;
+      --dark-alt: #334155;
+      --light: #f1f5f9;
+      --light-alt: #e2e8f0;
+      --success: #10b981;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+      --border-radius: 12px;
+      --transition: all 0.3s ease;
+      --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.15);
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-alt: #64748b;
+      --bg: #f8fafc;
+    }
+
+    .dark-theme {
+      --primary: #3b82f6;
+      --primary-light: #60a5fa;
+      --secondary: #6366f1;
+      --dark: #0f172a;
+      --dark-alt: #1e293b;
+      --light: #334155;
+      --light-alt: #475569;
+      --card-bg: #1e293b;
+      --text: #f1f5f9;
+      --text-alt: #cbd5e1;
+      --bg: #0f172a;
+      --shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      transition: var(--transition);
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Theme Toggle */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo i {
+      color: var(--secondary);
+    }
+
+    .theme-toggle {
+      background: var(--card-bg);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      font-size: 1.2rem;
+      color: var(--text);
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      min-height: 90vh;
+      padding: 50px 0;
+    }
+
+    .hero-content {
+      flex: 1;
+      padding-right: 30px;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 85%;
+      max-width: 400px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      z-index: 1;
+    }
+
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      opacity: 0.1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .hero-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-alt);
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      border: 2px solid var(--primary);
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      margin-left: 15px;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      border-radius: 2px;
+    }
+
+    /* About Section */
+    .about-content {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+      line-height: 1.8;
+      color: var(--text-alt);
+    }
+
+    .about-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+    }
+
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      padding: 30px;
+      text-align: center;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--light-alt);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary);
+    }
+
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.8rem;
+    }
+
+    .service-title {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    .service-text {
+      color: var(--text-alt);
+      line-height: 1.7;
+    }
+
+    /* Skills Section */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      padding: 25px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--light-alt);
+    }
+
+    .skill-title {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .skill-title i {
+      color: var(--primary);
+    }
+
+    .skill-item {
+      margin-bottom: 20px;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .skill-bar {
+      height: 10px;
+      background: var(--light);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      border-radius: 5px;
+      position: relative;
+      width: 0;
+      transition: width 1.5s ease-in-out;
+    }
+
+    .skill-progress::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    /* Portfolio Section */
+    .portfolio-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      padding: 8px 20px;
+      background: var(--light);
+      color: var(--text);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .portfolio-item {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+      height: 250px;
+    }
+
+    .portfolio-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 25px;
+      transform: translateY(100%);
+      transition: var(--transition);
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      transform: translateY(0);
+    }
+
+    .portfolio-item:hover .portfolio-img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-title {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .portfolio-category {
+      color: var(--primary-light);
+      font-size: 0.9rem;
+    }
+
+    /* Contact Section */
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .contact-info {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-text h4 {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+
+    .contact-text p, .contact-text a {
+      color: var(--text-alt);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-text a:hover {
+      color: var(--primary);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--light);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .contact-form {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid var(--light-alt);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text);
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 40px 0 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .footer-link {
+      color: var(--light-alt);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-link:hover {
+      color: var(--primary-light);
+    }
+
+    .copyright {
+      color: var(--light-alt);
+      font-size: 0.9rem;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 0;
+      }
+      
+      .hero-content {
+        padding-right: 0;
+        margin-bottom: 40px;
+      }
+      
+      .hero-title {
+        font-size: 2.8rem;
+      }
+      
+      .hero-btns {
+        display: flex;
+        justify-content: center;
+      }
+      
+      .about-content {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .hero-title {
+        font-size: 2.3rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.5rem;
+      }
+      
+      .btn {
+        padding: 10px 20px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-btns {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .btn {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <a href="#" class="logo">
+        <i class="fas fa-code"></i> KETINENI AKHIL
+      </a>
+      <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+      </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">KETINENI VENKATA SAI AKHIL</h1>
+        <h2 class="hero-subtitle">ServiceNow System Administrator</h2>
+        <p class="hero-text">
+          Certified ServiceNow System Administrator (CSA), 
+          focused on DevOps, web development, and cloud technologies. I transform complex problems 
+          into simple, clean, and intuitive digital experiences.
+        </p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn">Contact Me</a>
+          <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="main.png" alt="Akhil">
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            I'm Ketineni Venkata Sai Akhil, a certified ServiceNow System Administrator (CSA) and 
+            passionate UI/UX designer from India, with a focus on DevOps, web development, and 
+            cloud technologies. I enjoy transforming complex problems into simple, clean, and 
+            intuitive digital experiences.
+          </p>
+          <p>
+            My role is to build solutions that are not only functional and user-friendly, but also 
+            visually engaging. I combine system administration skills with design thinking to ensure 
+            the final product is scalable, efficient, and easy to use. Whether it's a cloud-integrated 
+            application or a dynamic web interface, I aim to communicate your message and identity in 
+            the most impactful way possible.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="my-avatar.png" alt="About Me">
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <h2 class="section-title">What I Do</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="service-title">Web Development</h3>
+          <p class="service-text">
+            Developing responsive, fast, and scalable websites using modern tech stacks and 
+            best practices.
+          </p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <h3 class="service-title">Cloud & DevOps</h3>
+          <p class="service-text">
+            Automating deployments and managing cloud infrastructure with tools like Docker, 
+            Kubernetes, and CI/CD pipelines.
+          </p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3 class="service-title">ServiceNow Administration</h3>
+          <p class="service-text">
+            Certified ServiceNow System Administrator skilled in managing users, workflows, 
+            and ITSM processes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-container">
+        <div class="skill-card">
+          <h3 class="skill-title"><i class="fas fa-laptop-code"></i> Technical Skills</h3>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>ServiceNow</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="85"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>HTML, CSS & JavaScript</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="90"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Docker & Kubernetes</span>
+              <span>75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="75"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-card">
+          <h3 class="skill-title"><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>AWS</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Jenkins & CI/CD</span>
+              <span>70%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="70"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Git & GitHub</span>
+              <span>95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="95"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+      <h2 class="section-title">My Portfolio</h2>
+      
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="devops">DevOps</button>
+        <button class="filter-btn" data-filter="servicenow">ServiceNow</button>
+      </div>
+      
+      <div class="portfolio-grid">
+        <div class="portfolio-item" data-category="web">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Project" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">E-commerce Dashboard</h3>
+            <p class="portfolio-category">Web Development</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-item" data-category="devops">
+          <img src="https://alln-extcloud-storage.cisco.com/Cisco_Blogs:gblogs/sites/35/Screenshot-2017-06-09-15.50.53.png" alt="Project" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">CI/CD Pipeline</h3>
+            <p class="portfolio-category">DevOps</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-item" data-category="servicenow">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Project" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">ITSM Workflow Automation</h3>
+            <p class="portfolio-category">ServiceNow</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-item" data-category="web">
+          <img src="https://images.unsplash.com/photo-1555066931-bf19f8fd1085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80" alt="Project" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Portfolio Website</h3>
+            <p class="portfolio-category">Web Development</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-item" data-category="devops">
+          <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1791&q=80" alt="Project" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Cloud Migration</h3>
+            <p class="portfolio-category">DevOps</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-item" data-category="servicenow">
+          <img src="https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/images/ds-screenshots/sc-feature-3.sm.jpg" alt="Project" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <h3 class="portfolio-title">Service Catalog Implementation</h3>
+            <p class="portfolio-category">ServiceNow</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 class="section-title">Contact Me</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Email</h4>
+              <a href="mailto:ketineniakhil@gmail.com">ketineniakhil@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Phone</h4>
+              <a href="tel:+916303074746">+91 6303074746</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Location</h4>
+              <p>Hyderabad, Telangana, India</p>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Subject">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">KETINENI AKHIL</div>
+        <div class="footer-links">
+          <a href="#about" class="footer-link">About</a>
+          <a href="#services" class="footer-link">Services</a>
+          <a href="#skills" class="footer-link">Skills</a>
+          <a href="#portfolio" class="footer-link">Portfolio</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </div>
+        <p class="copyright">© 2025 Ketineni Venkata Sai Akhil. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      body.setAttribute('data-theme', savedTheme);
+      updateThemeIcon(savedTheme);
+    }
+    
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+    
+    function updateThemeIcon(theme) {
+      themeToggle.innerHTML = theme === 'light' 
+        ? '<i class="fas fa-moon"></i>' 
+        : '<i class="fas fa-sun"></i>';
+    }
+    
+    // Portfolio Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        const filter = btn.getAttribute('data-filter');
+        
+        portfolioItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Animate Skills on Scroll
+    const skillBars = document.querySelectorAll('.skill-progress');
+    
+    function animateSkills() {
+      skillBars.forEach(bar => {
+        const width = bar.getAttribute('data-width');
+        bar.style.width = width + '%';
+      });
+    }
+    
+    // Initialize skill bars to 0 width
+    window.addEventListener('load', () => {
+      skillBars.forEach(bar => {
+        bar.style.width = '0%';
+      });
+    });
+    
+    // Animate skills when they come into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateSkills();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    observer.observe(document.getElementById('skills'));
+    
+    // Form Submission
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Form validation
+      const inputs = contactForm.querySelectorAll('.form-control');
+      let isValid = true;
+      
+      inputs.forEach(input => {
+        if (!input.value.trim()) {
+          isValid = false;
+          input.style.borderColor = 'var(--danger)';
+        } else {
+          input.style.borderColor = '';
+        }
+      });
+      
+      if (isValid) {
+        // Simulate form submission
+        alert('Thank you for your message! I will get back to you soon.');
+        contactForm.reset();
+      }
+    });
+    
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
